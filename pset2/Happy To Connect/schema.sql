@@ -16,6 +16,17 @@ CREATE TABLE "schools"(
     PRIMARY KEY ("id")
 );
 
+ALTER TABLE "schools"
+DROP COLUMN "location";
+
+ALTER table "schools" ADD COLUMN "type" TEXT NOT NULL;
+
+ALTER TABLE "schools"
+RENAME COLUMN "location" TO "Place";
+
+ALTER TABLE "schools"
+RENAME COLUMN "Place" TO "location";
+
 CREATE TABLE "schoolconnection"(
     "user_id" INTEGER,
     "school_id" INTEGER
